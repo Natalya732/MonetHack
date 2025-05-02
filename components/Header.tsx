@@ -21,6 +21,7 @@ export default function Header() {
             <Loader2 className="animate-spin text-slate-400 size-8" />
           </ClerkLoading>
         </div>
+        <UserButton afterSignOutUrl="/" />
         
             <WelcomeMsg/>
       </div>
