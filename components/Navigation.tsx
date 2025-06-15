@@ -50,7 +50,7 @@ export const Navigation = () => {
           <Button
             variant="outline"
             size="sm"
-            className="font-normal bg-white/10 hover-bg-white/20 hover:text-white border-none
+            className="font-normal bg-white/10 hover:bg-white/20 hover:text-white border-none
             focus-visible:ring-offset-0 cursor-pointer focus-visible:ring-transparent outline-none text-white focus:bg-white/30 transition"
           >
             <Menu className="size-4" />
@@ -65,6 +65,7 @@ export const Navigation = () => {
                 onClick={() => onClick(route.href)}
                 className="w-full justify-start"
               >
+                
                 {route.label}
               </Button>
             ))}

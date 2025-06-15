@@ -8,6 +8,13 @@
       "when": 1746177747240,
       "tag": "0000_harsh_killmonger",
       "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1749972814820,
+      "tag": "0001_small_hellion",
+      "breakpoints": true
     }
   ]
 }

@@ -15,16 +15,14 @@ export default function Header() {
             <Navigation />
           </div>
           <ClerkLoaded>
+            <UserButton afterSignOutUrl="/" />
           </ClerkLoaded>
           <ClerkLoading>
-            <UserButton afterSignOutUrl="/" />
             <Loader2 className="animate-spin text-slate-400 size-8" />
           </ClerkLoading>
         </div>
-        <UserButton afterSignOutUrl="/" />
-        
-            <WelcomeMsg/>
       </div>
+      <WelcomeMsg />
     </header>
   );
 }
