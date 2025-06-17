@@ -15,6 +15,13 @@
       "when": 1749972814820,
       "tag": "0001_small_hellion",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1750124178131,
+      "tag": "0002_flashy_the_phantom",
+      "breakpoints": true
     }
   ]
 }
