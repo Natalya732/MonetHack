@@ -7,6 +7,7 @@ import { XIcon } from "lucide-react"
 import { cn } from "@/lib/utils"
 
 function Sheet({ ...props }: React.ComponentProps<typeof SheetPrimitive.Root>) {
+  console.log("inside sheet", props)
   return <SheetPrimitive.Root data-slot="sheet" {...props} />
 }
 
