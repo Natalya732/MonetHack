@@ -70,9 +70,9 @@ export const EditCategorySheet = () => {
       <Sheet open={isOpen} onOpenChange={onClose}>
         <SheetContent className="space-y-4">
           <SheetHeader>
-            <SheetTitle>Edit Account</SheetTitle>
+            <SheetTitle>Edit Category</SheetTitle>
             <SheetDescription>
-              Edit account to track your transaction.
+              Edit category to track your transaction.
             </SheetDescription>
           </SheetHeader>
           {isLoading ? (

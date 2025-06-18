@@ -75,24 +75,14 @@ const app = new Hono()
 
   .get(
     "/:id",
-    zValidator(
-      "param",
-      z.object({
-        id: z.string().optional(),
-      })
-    ),
+    zValidator("param", z.object({ id: z.string().optional() })),
     clerkMiddleware(),
     async (c) => {
       const auth = getAuth(c);
       const { id } = c.req.valid("param");
 
-      if (!id) {
-        return c.json({ error: "Missing id" }, 400);
-      }
-
-      if (!auth?.userId) {
-        return c.json({ error: "Unauthorized" }, 401);
-      }
+      if (!id) return c.json({ error: "Missing id" }, 400);
+      if (!auth?.userId) return c.json({ error: "Unauthorized" }, 401);
 
       const [data] = await db
         .select({
@@ -108,11 +98,10 @@ const app = new Hono()
         })
         .from(transactions)
         .innerJoin(accounts, eq(transactions.accountId, accounts.id))
-        .where(and(eq(transactions.id, id), eq(accounts.userId, auth.userId)));
+        .leftJoin(categories, eq(transactions.categoryId, categories.id))
+        .where(and(eq(transactions.id, id), eq(accounts.userId, auth.userId))); // user scoping
 
-      if (!data) {
-        return c.json({ error: "Not Found" }, 404);
-      }
+      if (!data) return c.json({ error: "Not Found" }, 404);
 
       return c.json({ data });
     }
